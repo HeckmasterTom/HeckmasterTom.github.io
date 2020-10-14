@@ -1,0 +1,155 @@
+<!-- Algo Creation Page -->
+<!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <title>Algo Creation</title>
+        <!-- Bootstrap core CSS -->
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    </head>
+
+    <body>
+      <script src="Algo_Creation_JS.js"></script>
+
+      <nav class="navbar fixed-top text-white bg-primary justify-content-center">
+        <span class="navbar-text">
+          Algo Creation
+        </span>
+      </nav>
+      <br>
+      </br>
+      <br>
+      </br>
+
+      <p id="demo" onclick="myFunction()">Click me to change my text color.</p>
+
+      <div class = "container">
+        <form action="https://www.google.com">
+          <!-- Auto or not -->
+          <fieldset id = "q1">
+            <legend>Confidence</legend>
+            <label for="auto">How confident of an algorithmic investor are you?</label><br>
+            <input type="radio" onclick="show('q1.1'); hide('q1.2');" id="1.1" name="auto">
+            <label>Very, I'd like the computer to make trading decisions for me.</label>
+            <br>
+            <input type="radio" onclick="show('q1.2'); hide('q1.1');" id="1.2" name="auto">
+            <label>Not so much, I'd like the computer to suggest trades for me only.</label>
+            <br><br>
+          </fieldset>
+
+          <!-- Type of securities -->
+          <fieldset id = "q1.1" style="display: none;">
+            <legend>Type of Securities</legend>
+            <label for="securities">What types of securities are you looking to trade?</label><br>
+            <input type="radio" onclick="show('q1.1.1'); hide('q1.1.2');" id="1.1.1" name="securities">
+            <label>Stocks</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.2'); hide('q1.1.1');" id="1.1.2" name="securities">
+            <label>ETFs/Mutual Funds</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.2'); hide('q1.1.1');" id="1.1.3" name="securities">
+            <label>Options</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.2'); hide('q1.1.1');" id="1.1.4" name="securities">
+            <label>Others</label>
+            <br>
+            <br>
+          </fieldset>
+
+          <!-- Type of stocks -->
+          <fieldset id = "q1.1.1" style="display: none;">
+            <legend>Types of Stocks</legend>
+            <label for="stocks">What types of stocks are you looking to trade?</label><br>
+            <input type="radio" onclick="show('q1.1.1.1'); hide('q1.1.1.2');" id="1.1.1.1" name="stocks">
+            <label>Specific ones - I know the company/companies I want to invest in</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.2'); hide('q1.1.1.1');" id="1.1.1.2" name="stocks">
+            <label>An industry - I know the industry I want to trade and am willing to trade anything within it</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.3'); hide('q1.1.1.1');" id="1.1.1.3" name="stocks">
+            <label>All stocks within an index - S&P 500, DJIA, etc.</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.4'); hide('q1.1.1.1');" id="1.1.1.4" name="stocks">
+            <label>Some other group of stocks</label>
+            <br>
+            <br>
+          </fieldset>
+
+          <!-- Action -->
+          <fieldset id = "q1.1.1.1" style="display: none;">
+            <legend>Action</legend>
+            <label for="action">What action would you like to take on these stocks?</label><br>
+            <input type="radio" onclick="show('q1.1.1.1.1'); hide('q1.1.1.1.2');" id="1.1.1.1.1" name="action">
+            <label>Buy only</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.1.2'); hide('q1.1.1.1.1');" id="1.1.1.1.2" name="action">
+            <label>Buy and Sell</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.1.3'); hide('q1.1.1.1.1');" id="1.1.1.1.3" name="action">
+            <label>Sell only</label>
+            <br><br>
+          </fieldset>
+
+          <!-- Timing -->
+          <fieldset id = "q1.1.1.1.1" style="display: none;">
+            <legend>Timing</legend>
+            <label for="time">When would you like to buy these stocks?</label><br>
+            <input type="radio" onclick="show('q1.1.1.1.1.1'); hide('q1.1.1.1.1.2');" id="1.1.1.1.1.1" name="time">
+            <label>When they lose more than 10% of their value in the previous month</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.1.1.2'); hide('q1.1.1.1.1.1');" id="1.1.1.1.1.2" name="time">
+            <label>Every 2 weeks</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.1.1.3'); hide('q1.1.1.1.1.1');" id="1.1.1.1.1.3" name="time">
+            <label>When their daily trading volume increases by 20% over a 30-day moving average</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.1.1.4'); hide('q1.1.1.1.1.1');" id="1.1.1.1.1.4" name="time">
+            <label>Other (stock indicators, tweets, ratings agencies, historic patterns, recent events, etc.)</label>
+            <br><br>
+          </fieldset>
+
+          <!-- Quantity -->
+          <fieldset id = "q1.1.1.1.1.1" style="display: none;">
+            <legend>Quantity</legend>
+            <label for="quantity">For each purchase event, how much would you like to buy?</label><br>
+            <input type="radio" onclick="show('q1.1.1.1.1.1.1'); hide('q1.1.1.1.1.1.2');" id="1.1.1.1.1.1.1" name="quantity">
+            <label>$100 worth</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.1.1.1.2'); hide('q1.1.1.1.1.1.1');" id="1.1.1.1.1.1.2" name="quantity">
+            <label>2 shares</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.1.1.1.3'); hide('q1.1.1.1.1.1.1');" id="1.1.1.1.1.1.3" name="quantity">
+            <label>1/10th of the cash in your portfolio</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.1.1.1.4'); hide('q1.1.1.1.1.1.1');" id="1.1.1.1.1.1.4" name="quantity">
+            <label>1/20th of your entire portfolio</label>
+            <br>
+            <br>
+          </fieldset>
+
+          <!-- Failsafes -->
+          <fieldset id = "q1.1.1.1.1.1.1" style="display: none;">
+            <legend>Failsafes</legend>
+            <label for="failsafes">What (if any) failsafes would you like to have in your algorithm?</label><br>
+            <input type="radio" onclick="show('q1.1.1.1.1.1.1.1'); hide('q1.1.1.1.1.1.1.2');" id="1.1.1.1.1.1.1.1" name="failsafes">
+            <label>No more than 3 trades per day</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.1.1.1.1.2'); hide('q1.1.1.1.1.1.1.1');" id="1.1.1.1.1.1.1.2" name="failsafes">
+            <label>No more than $1000 of trades per week</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.1.1.1.1.3'); hide('q1.1.1.1.1.1.1.1');" id="1.1.1.1.1.1.1.3" name="failsafes">
+            <label>No more than 30% of your portfolio is a single stock</label>
+            <br>
+            <input type="radio" onclick="show('q1.1.1.1.1.1.1.4'); hide('q1.1.1.1.1.1.1.1');" id="1.1.1.1.1.1.1.4" name="failsafes">
+            <label>Notify me if a loss of 10% or more occurs in a single security in one week</label>
+            <br>
+            <br>
+          </fieldset>
+
+          <button id = "q1.1.1.1.1.1.1.1" style="display: none;" type="button" class="bg-primary">Submit</button>
+        </form>
+      </div>
+    </body>
+  </html>
